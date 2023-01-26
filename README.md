@@ -12,9 +12,10 @@ Running the main file of the implementation starts a little game. <br />
 
 Suppose that you are interested in taking ski lessons, and you start wondering about the equipment needed. 
 You are not sure if you will really like it, so it is not clear whether you should buy skis or start renting each time you have a lesson.
-Each time you rent skis, you have to pay 1€, while the total cost of buying skis is 100€. So, the question you want to resolve is the following. What should be the strategy towards renting/buying so that you do not spend too much money if the total number of times you will go skiing is not yet known? Additionally, you can get a prediction on how many days you will ski.<br />
+Each time you rent skis, you have to pay 1€, while the total cost of buying skis is 100€. So, the question you want to resolve is the following. What should be the strategy towards renting/buying so that you do not spend too much money if the total number of times you will go skiing is not yet known? <br />
+Additionally, you can get a prediction on how many days you will ski. This prediction can be good, but it can also be very bad. <br />
 
-You than get a prediction on how many days you will go skiing. Based on this prediction, choose how many days you will rent the ski before you decide to buy them. <br />
+Based on this prediction, choose how many days you will rent the ski before you decide to buy them. <br />
 
 Afterwards, you can compare how well your guess was, compared to the implemented algorithms. <br />
 
@@ -27,19 +28,26 @@ Have fun!
 First clone the repository to your preferred location:
 
 ```bash
+# HTTPS
 git clone https://github.com/LarissaRickler/ski_rental_app.git
+
+# SSH
+git clone git@github.com:LarissaRickler/ski_rental_app.git
 ```
 
 I recommend creating a separate environment before installing the dependencies, e. g. via 
 
 ```bash
-conda create -n <name_of_environment>
-conda activate <name_of_environment>
+conda create -n ski_rental_app
+conda activate ski_rental_app
 ```
 
 We then need to install the dependencies. The code depends on (assuming python3):
 
 ```bash
+# Install tkinter (standard Python interface to the Tcl/Tk GUI toolkit)
+sudo apt-get install python3-tk
+
 # Install dependencies
 pip install -r requirements.txt
 ```
