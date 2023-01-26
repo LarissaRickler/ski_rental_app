@@ -17,6 +17,11 @@ def back_pick():
     window.deiconify()
     result_window.destroy()
 
+def back_pick_main():
+    root.deiconify()
+    window.destroy()
+    result_window.destroy()
+
 
 
 
@@ -49,9 +54,9 @@ def set_mode(mode):
     window = tk.Toplevel(root)  # create parent window
     root.withdraw()
     window.title("Ski Rental")
-    window.geometry("600x270")
+    window.geometry()
     
-    message_ski_rental = "\nThe price of the ski is " + str(b) + "€.\nYou choose a " + str(prediction_mode) +\
+    message_ski_rental = "\nThe price of the ski is " + str(b) + "€.\nYou chose a " + str(prediction_mode) +\
                          " predicter.\nThe predicted number of skiing days is " + str(y) + ".\n"
  
 
@@ -71,7 +76,7 @@ def set_mode(mode):
     next_window = tk.Button(window, text="See results", height= 1, width=10, command=lambda: calc_results(guess_x.get()))
     next_window.pack()
     
-    back = tk.Button(window, text="Back", height= 1, width=10, command=back_pred)
+    back = tk.Button(window, text="Back to main", height= 1, width=10, command=back_pred)
     back.pack()
     
     window.protocol("WM_DELETE_WINDOW", on_closing)
@@ -101,7 +106,7 @@ def calc_results(guessed_x):
     result_window = tk.Toplevel(root)  # create parent window
     window.withdraw()
     result_window.title("Ski Rental Results")
-    result_window.geometry("500x650")
+    result_window.geometry()
     
     
     message_result = "\nPredicted number of days: " + str(y) +\
@@ -130,6 +135,9 @@ def calc_results(guessed_x):
     
     back = tk.Button(result_window, text="Back", height= 1, width=10, command=back_pick)
     back.pack()
+
+    back_to_main = tk.Button(result_window, text="Back to main", height= 1, width=10, command=back_pick_main)
+    back_to_main.pack()
 
     quit_button = tk.Button(result_window, text="Quit", height= 1, width=10, command=on_closing_result)
     quit_button.pack()
@@ -164,7 +172,7 @@ def start():
     global root
     root = tk.Tk()  
     root.title("Ski Rental")
-    root.geometry("700x370")
+    root.geometry()
 
     message_info =  "\nSuppose that you are interested in taking ski lessons, " +\
                     "and you start wondering about the equipment needed. " +\
